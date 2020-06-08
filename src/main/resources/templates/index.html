@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Słowik</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Mini Słowniczek</h1>
+        <a href="new">Dodaj nowe słowo</a>
+        <br><br/>
+        <table border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>po polsku</th>
+                    <th>po angielsku</th>
+                    <th>możliwości</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product : ${listProducts}">
+                    <td  th:text="${product.id}">id</td>
+                    <td  th:text="${product.spol}">po polsku</td>
+                    <td  th:text="${product.sang}">po angielsku</td>
+                    <td>
+                     <a th:href="@{'/edit/' + ${product.id}}">Edytuj</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                     <a th:href="@{'/delete/' + ${product.id}}">Usuń</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>

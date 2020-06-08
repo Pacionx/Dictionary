@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Dodaj do słownika</title>
+</head>
+<body>
+    <div align="cenrer">
+        <h1>Create New Product</h1>
+        <br/>
+        <form action="#" th:action="@{/save}" th:object="${product}" method="post">
+            <table border="0" cellpadding="10">
+                <tr>
+                    <td>Słowo po polsku:</td>
+                    <td><input type="text" th:field="*{spol}"/></td>
+                </tr>
+                <tr>
+                    <td>Słowo po angielsku:</td>
+                    <td><input type="text" th:field="*{sang}"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button></td>
+                </tr>
+
+            </table>
+
+        </form>
+    </div>
+</body>
+</html>
